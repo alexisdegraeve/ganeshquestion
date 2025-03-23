@@ -24,6 +24,12 @@ function App() {
              { startQuestions ? 'stop game' : 'start game' }
         </button>
       </div>
+      <div>
+        QUESTION
+      </div>
+      <button className="btn btn-danger" disabled={!startQuestions}>
+        Passe
+      </button>
 
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
