@@ -8,6 +8,10 @@ function App() {
 
   return (
     <>
+        <div className="container">
+      <h1>Bienvenue sur mon site</h1>
+      <button className="btn btn-primary">Cliquer ici</button>
+    </div>
       <div>
         QPUC
         <a href="https://vite.dev" target="_blank">
