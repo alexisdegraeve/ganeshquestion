@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import './App.scss'
 import TimerExample from './components/timerexample/timerexample' 
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
       <h1>Bienvenue sur mon site</h1>
       <button className="btn btn-primary">Cliquer ici</button>
       <TimerExample /> 
+      <h1>TEST</h1>
     </div>
       <div>
         QPUC
