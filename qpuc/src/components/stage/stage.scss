@@ -1,3 +1,29 @@
-.active {
-    border: 2px solid red;
-}
+        .stage {
+            fill: cyan;
+            // background: rgb(168, 54, 4);
+            // background: linear-gradient(0deg, rgba(168, 54, 4, 1) 0%, rgba(244, 132, 7, 1) 50%, rgba(155, 47, 1, 1) 100%);
+            polygon {
+                stroke: blue;
+                stroke-width: 6;
+            }
+            &.active {
+                polygon {
+                    stroke: green;
+                    stroke-width: 6;
+                }
+            }
+            .heavy {
+                font: bold 140px sans-serif;
+                fill: yellow;
+            }
+        }
+        
+        .stop1 {
+            stop-color: rgba(168, 54, 4, 1);
+            stop-opacity: 1
+        }
+        
+        .stop2 {
+            stop-color: rgba(244, 132, 7, 1);
+            stop-opacity: 1
+        }
