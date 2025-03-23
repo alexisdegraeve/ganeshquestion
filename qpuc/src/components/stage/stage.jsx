@@ -12,8 +12,8 @@ const Stage = ({level, active}) => {
                     <stop offset="100%" className='stop1'/>
                     </linearGradient>
                 </defs>
-                <polygon points="150,15 258,77 258,202 150,265 42,202 42,77" fill="url(#header-shape-gradient)"  />
-                <text x="50%" y="50%" class="heavy">{ level }</text>
+                <polygon points="150,15 258,77 258,202 150,265 42,202 42,77" fill={!active ? "transparent" : "url(#header-shape-gradient)"}  />
+                <text x="43%" y="53%" dominant-baseline="middle" text-anchor="middle" class="heavy">{ level }</text>
                 Sorry, your browser does not support inline SVG.
                 </svg>
 

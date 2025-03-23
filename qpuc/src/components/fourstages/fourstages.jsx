@@ -1,12 +1,13 @@
 import Stage from "../stage/stage";
+import "./fourstages.scss"
 
 function FourStages() {
     return (
-        <div>
-            <Stage level="4" active={true}></Stage>
+        <div className="fourstages">
+            <Stage level="4"></Stage>
             <Stage level="3"></Stage>
             <Stage level="2"></Stage>
-            <Stage level="1"></Stage>
+            <Stage level="1" active={true}></Stage>
         </div>
     );
 }

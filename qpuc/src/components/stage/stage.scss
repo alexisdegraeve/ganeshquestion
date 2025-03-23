@@ -1,20 +1,20 @@
         .stage {
-            fill: cyan;
+            // fill: cyan;
             // background: rgb(168, 54, 4);
             // background: linear-gradient(0deg, rgba(168, 54, 4, 1) 0%, rgba(244, 132, 7, 1) 50%, rgba(155, 47, 1, 1) 100%);
             polygon {
-                stroke: blue;
+                stroke: rgba(175, 216, 244, 1);
                 stroke-width: 6;
             }
             &.active {
                 polygon {
-                    stroke: green;
+                    stroke: white;
                     stroke-width: 6;
                 }
             }
             .heavy {
                 font: bold 140px sans-serif;
-                fill: yellow;
+                fill: rgba(175, 216, 244, 1);
             }
         }
         
