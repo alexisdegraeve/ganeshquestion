@@ -1,12 +1,12 @@
-import './brick.scss'
+import './stage.scss'
 
-const Brick = ({level, active}) => {
+const Stage = ({level, active}) => {
     return (
         <div className={active ? 'active' : '' }>
-            BRICK
+            STAGE
             { level }
         </div>
     );
 }
 
-export default Brick;
+export default Stage;

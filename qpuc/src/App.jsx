@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.scss'
 import TimerExample from './components/timerexample/timerexample' 
-import FourInOne from './components/fourinone/fourinone'
+import FourInOne from './components/fourstages/fourstages'
 
 function App() {
   const [count, setCount] = useState(0)
