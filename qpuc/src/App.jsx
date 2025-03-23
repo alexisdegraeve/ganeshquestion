@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.scss'
 import TimerExample from './components/timerexample/timerexample' 
+import FourInOne from './components/fourinone/fourinone'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +18,10 @@ function App() {
 
   return (
     <>
+      <div className="container">
+            <FourInOne></FourInOne>
+      </div>
+
       <div className="container">
         <TimerExample start={startQuestions} onTimeEnd={handleTimeEnd}  /> 
         <h1>Question Pour Un Champion</h1>
