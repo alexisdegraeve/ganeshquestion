@@ -1,43 +1,45 @@
-import React, { useState, useEffect } from 'react';
-const TimerExample = ({start}) => {
-    const [timeLeft, setTimeLeft] = useState(10); // Temps initial de 10 secondes
-    const [message, setMessage] = useState('');
-  
-    useEffect(() => {
-      console.log("La prop 'start' a changé :", start);
-      let timer
-      if(!start) {
-        clearInterval(timer);
-        console.log('TIMER PAS Dermarrer');
-        setTimeLeft(10); // RESET
-      }
-      if(start) {
-        timer = setInterval(() => {
-          console.log('TIMER ', timer)
-          setTimeLeft((prevTime) => {
-            if (prevTime <= 1) {
-              clearInterval(timer); // Arrêter le timer quand le temps est écoulé
-              setMessage('Le temps est écoulé !');
-              console.log('Timer oui ', prevTime)
-              return 0; // Ne pas descendre en dessous de 0
-            }
-            return prevTime - 1; // Décrémenter le temps restant
-          });
-        }, 1000); // 1000ms = 1 seconde
-    
-        // Nettoyage du timer quand le composant est démonté
-        return () => clearInterval(timer);
-      } 
+import React, { useState, useEffect, useRef } from 'react';
 
-    }, [start]); // [] signifie que l'effet se lance une seule fois (au démarrage du composant)
-  
-    return (
-      <div>
-        <h1>Compte à rebours</h1>
-        <p>Temps restant : {timeLeft} secondes</p>
-        <p>{message}</p>
-      </div>
-    );
-  };
+const TimerExample = ({ start, onTimeEnd }) => {
+  const [timeLeft, setTimeLeft] = useState(10);
+  const [message, setMessage] = useState('');
+  const timerRef = useRef(null); // Stocke la référence du timer
 
-  export default TimerExample;
+  useEffect(() => {
+    console.log("La prop 'start' a changé :", start);
+
+    if (!start) {
+      clearInterval(timerRef.current); // Stoppe le timer si `start` est false
+      timerRef.current = null;
+      setTimeLeft(10); // Reset le temps
+      setMessage('');
+      return;
+    }
+
+    timerRef.current = setInterval(() => {
+      setTimeLeft((prevTime) => {
+        if (prevTime <= 1) {
+          clearInterval(timerRef.current); // Stoppe le timer quand le temps est écoulé
+          timerRef.current = null;
+          setMessage('Le temps est écoulé !');
+          onTimeEnd()
+          return 0;
+        }
+        return prevTime - 1; // Décrémente
+      });
+    }, 1000);
+
+    // Nettoyage quand `start` change ou le composant est démonté
+    return () => clearInterval(timerRef.current);
+  }, [start]); // Dépendance sur `start`
+
+  return (
+    <div>
+      <h1>Compte à rebours</h1>
+      <p>Temps restant : {timeLeft} secondes</p>
+      <p>{message}</p>
+    </div>
+  );
+};
+
+export default TimerExample;

@@ -10,10 +10,15 @@ function App() {
     setStartQuestions((prevStart) => ! prevStart);
   }
 
+  const handleTimeEnd = () => {
+    console.log("Le timer est terminé !");
+    setStartQuestions(false); // On arrête le timer après expiration
+  };
+
   return (
     <>
       <div className="container">
-        <TimerExample start={startQuestions} /> 
+        <TimerExample start={startQuestions} onTimeEnd={handleTimeEnd}  /> 
         <h1>Question Pour Un Champion</h1>
         <button className="btn btn-primary" onClick={toggleStartQuestions}>
              { startQuestions ? 'stop game' : 'start game' }
