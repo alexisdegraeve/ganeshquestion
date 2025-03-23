@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import TimerExample from './components/timerexample/timerexample' 
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,6 +12,7 @@ function App() {
         <div className="container">
       <h1>Bienvenue sur mon site</h1>
       <button className="btn btn-primary">Cliquer ici</button>
+      <TimerExample /> 
     </div>
       <div>
         QPUC
