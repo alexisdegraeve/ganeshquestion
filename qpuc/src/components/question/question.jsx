@@ -1,24 +1,35 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './question.scss'
 
 const Question = ({showFront, question, answer, points}) => {
     const [myAnswer, setMyAnswer] = useState('');
     const [correct, setCorrect] = useState();
+    const inputAnswer = useRef(null)
+
+    useEffect (() => {
+        inputAnswer.current.focus();
+    })
 
     const handleMyAnswer = (event) => {
         setMyAnswer(event.target.value)
     }
 
     const checkAnswer = () => {
-            if(myAnswer == answer) {
+            if(myAnswer.toLowerCase() == answer.toLowerCase()) {
                 setCorrect(true);
             } else {
                 setCorrect(false);
             }
     }
 
+    const handleKeyDown = (e) => {
+        if (e.key ==  "Enter") {
+            checkAnswer()
+        }
+    }
+
     return (<>
-            <div class="questioncard">
+            <div className="questioncard">
                 <div className ={'frontcard '+ (showFront ? '' : 'nonactive')}>
                     AVANT
                 </div>
@@ -28,8 +39,8 @@ const Question = ({showFront, question, answer, points}) => {
                     {question}
                     {answer}
                     {points}
-                    <input type="text" value={myAnswer} onChange={handleMyAnswer} placeholder='Your answer'></input>
-                    <button class="btn btn-primary" onClick={checkAnswer}>
+                    <input ref={inputAnswer} type="text" value={myAnswer} onChange={handleMyAnswer} placeholder='Your answer' onKeyDown={handleKeyDown}></input>
+                    <button className="btn btn-primary" onClick={checkAnswer}>
                         VALID!
                     </button>
                     YOUR ANSWER IS CORRECT { correct ? 'YES ' : 'NO'}

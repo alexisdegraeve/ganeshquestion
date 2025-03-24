@@ -13,7 +13,7 @@ const Stage = ({level, active}) => {
                     </linearGradient>
                 </defs>
                 <polygon points="150,15 258,77 258,202 150,265 42,202 42,77" fill={!active ? "transparent" : "url(#header-shape-gradient)"}  />
-                <text x="43%" y="53%" dominant-baseline="middle" text-anchor="middle" class="heavy">{ level }</text>
+                <text x="43%" y="53%" dominantBaseline="middle" textAnchor="middle" className="heavy">{ level }</text>
                 Sorry, your browser does not support inline SVG.
                 </svg>
 
