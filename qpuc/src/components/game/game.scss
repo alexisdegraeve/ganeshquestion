@@ -2,4 +2,12 @@ h1.champion {
     font-family: 'Great Vibes', cursive;
     font-size: 4rem;
     color: gold;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 767px) {
+    h1.champion {
+        font-size: 2.75rem;
+        margin-bottom: 2rem;
+    }
 }

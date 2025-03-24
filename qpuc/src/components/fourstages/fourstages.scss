@@ -1,4 +1,15 @@
-.fourstages {
-    background-image: linear-gradient(45deg, #cc00cc 30.39%, #000000 30.39%, #000000 40.20%, #000000 40.20%, #000000 50%, #cc00cc 50%, #cc00cc 80.39%, #000000 80.39%, #000000 90.20%, #000000 90.20%, #000000 100%);
-    background-size: 144.25px 144.25px;
-}
+                    .fourstages {
+                        background-image: linear-gradient(45deg, #cc00cc 30.39%, #000000 30.39%, #000000 40.20%, #000000 40.20%, #000000 50%, #cc00cc 50%, #cc00cc 80.39%, #000000 80.39%, #000000 90.20%, #000000 90.20%, #000000 100%);
+                        background-size: 144.25px 144.25px;
+                    }
+                    
+                    .four-stages {
+                        flex-direction: column;
+                    }
+                    
+                    @media (max-width: 767px) {
+                        .four-stages {
+                            flex-direction: row-reverse;
+                            align-items: anchor-center;
+                        }
+                    }

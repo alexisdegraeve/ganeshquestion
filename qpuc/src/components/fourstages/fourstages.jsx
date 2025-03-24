@@ -3,7 +3,7 @@ import "./fourstages.scss"
 
 const FourStages = ({start}) => {
     return (
-        <div className="d-flex flex-nowrap flex-column">
+        <div className="d-flex flex-nowrap four-stages">
             <Stage level="4"></Stage>
             <Stage level="3"></Stage>
             <Stage level="2"></Stage>

@@ -1,40 +1,51 @@
-        .stage {
-            height: 8rem;
-            transition: height 0.5s ease-in-out;
-            polygon {
-                stroke: rgba(175, 216, 244, 1);
-                stroke-width: 6;
-                transition: fill 0.5s ease-in-out;
-            }
-            &.active {
-                height: 10rem;
-                polygon {
-                    stroke: white;
-                    stroke-width: 6;
-                    transition: fill 10s ease-in-out;
+                .stage {
+                    height: 8rem;
+                    width: 10rem;
+                    transition: height 0.5s ease-in-out;
+                    polygon {
+                        stroke: rgba(175, 216, 244, 1);
+                        stroke-width: 6;
+                        transition: fill 0.5s ease-in-out;
+                    }
+                    &.active {
+                        height: 10rem;
+                        polygon {
+                            stroke: white;
+                            stroke-width: 6;
+                            transition: fill 10s ease-in-out;
+                        }
+                        .heavy {
+                            fill: yellow;
+                        }
+                    }
+                    .heavy {
+                        font: bold 140px sans-serif;
+                        fill: rgba(175, 216, 244, 1);
+                    }
                 }
-                .heavy {
-                    fill: yellow;
+                
+                .stop1 {
+                    stop-color: rgba(168, 54, 4, 1);
                 }
-            }
-            .heavy {
-                font: bold 140px sans-serif;
-                fill: rgba(175, 216, 244, 1);
-            }
-        }
-        
-        .stop1 {
-            stop-color: rgba(168, 54, 4, 1);
-        }
-        
-        .stop2 {
-            stop-color: rgba(244, 132, 7, 1);
-        }
-        
-        .polygon-active {
-            fill: url(#header-shape-gradient);
-        }
-        
-        .polygon-inactive {
-            fill: rgba(255, 255, 255, 0);
-        }
+                
+                .stop2 {
+                    stop-color: rgba(244, 132, 7, 1);
+                }
+                
+                .polygon-active {
+                    fill: url(#header-shape-gradient);
+                }
+                
+                .polygon-inactive {
+                    fill: rgba(255, 255, 255, 0);
+                }
+                
+                @media (max-width: 767px) {
+                    .stage {
+                        height: auto;
+                        width: 4.5rem;
+                        &.active {
+                            height: 6rem;
+                        }
+                    }
+                }

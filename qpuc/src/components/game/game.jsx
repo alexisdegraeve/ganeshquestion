@@ -37,17 +37,17 @@ const Game = () => {
   return (
     <>
       <div class="container">
-        <h1 className="champion text-center mb-2">Question Pour Un Champion</h1>
+        <h1 className="champion text-center">Question Pour Un Champion</h1>
 
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-2 col-lg-3">
             <div class="left-column">
               <div className="container">
                 <FourInOne start={startQuestions}></FourInOne>
               </div>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-10 col-lg-9">
             <div class="right-column">
               <div>
                 {!startQuestions && score === 4 ? 'BRAVO VOUS AVEZ GAGNEZ' : ''}
