@@ -19,11 +19,11 @@ const Question = ({showFront, question, answer, points}) => {
 
     return (<>
             <div class="questioncard">
-                <div class="frontcard " className={showFront ? 'visible' : 'invisible'}>
+                <div className ={'frontcard '+ (showFront ? '' : 'nonactive')}>
                     AVANT
                 </div>
 
-                <div class="backcard " className={!showFront ? 'visible' : 'invisible'}>
+                <div className ={'backcard '+ (!showFront ? '' : 'nonactive')}>
                     ARRIERE
                     {question}
                     {answer}

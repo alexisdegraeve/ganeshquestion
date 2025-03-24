@@ -1,13 +1,37 @@
+.questioncard {
+    width: 200px;
+    height: 300px;
+}
+
 .frontcard {
     display: block;
-    &.visible {
+    backface-visibility: hidden;
+    background-color: red;
+    height: 100%;
+    width: 100%;
+    animation: flipcard 5s ease-in;
+    &.nonactive {
         display: none;
     }
 }
 
 .backcard {
     display: block;
-    &.visible {
+    backface-visibility: hidden;
+    background-color: cyan;
+    height: 100%;
+    width: 100%;
+    animation: flipcard 5s ease-in;
+    &.nonactive {
         display: none;
+    }
+}
+
+@keyframes flipcard {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
     }
 }
