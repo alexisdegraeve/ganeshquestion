@@ -73,6 +73,7 @@ const Question = ({ showFront, question, answer, points, onCountScore }) => {
           )}
 
           <br />
+          <button className="btn btn-danger">Passe</button>
         </div>
       </div>
     </>
