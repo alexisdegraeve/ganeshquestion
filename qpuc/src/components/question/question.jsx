@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import "./question.scss";
 
-const Question = ({ showFront, question, answer, points, onCountScore }) => {
+const Question = ({ question, answer, points, onCountScore, onStartGame, onStopGame }) => {
   const [myAnswer, setMyAnswer] = useState("");
   const [correct, setCorrect] = useState();
+  const [showFront, setShowFront] = useState(true);
   const inputAnswer = useRef(null);
+
 
   useEffect(() => {
     inputAnswer.current.focus();
@@ -29,16 +31,31 @@ const Question = ({ showFront, question, answer, points, onCountScore }) => {
     }
   };
 
+  const startGame = () => {
+    setShowFront(false)
+    onStartGame(true)
+  }
+
+  const stopGame  = () => {
+    setShowFront(true)
+    onStopGame(false)
+  }
+
   return (
     <>
       <div className="questioncard">
         <div className={"frontcard " + (showFront ? "" : "nonactive")}>
-          AVANT
-          <span className="champion-text">Champion</span>
+          <span className="champion-text text-center">Question Pour Un <br />Champion</span>
+          <button className="btn btn-primary mt-2" onClick={startGame}>
+                START
+          </button>
         </div>
 
         <div className={"backcard " + (!showFront ? "" : "nonactive")}>
           <h5>{question}</h5>
+          <button className="btn btn-primary" onClick={stopGame}>
+                STOP GAME
+          </button>
           {answer}
           {points}
           <form>

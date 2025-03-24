@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Stage from '../stage/stage';
 
 const TimerExample = ({ start, onTimeEnd }) => {
   const [timeLeft, setTimeLeft] = useState(40);
@@ -35,7 +36,7 @@ const TimerExample = ({ start, onTimeEnd }) => {
 
   return (
     <div>
-      <h1>Compte à rebours</h1>
+      <Stage level={timeLeft}>{ {timeLeft}}</Stage>
       <p>Temps restant : {timeLeft} secondes</p>
       <p>{message}</p>
     </div>

@@ -1,7 +1,8 @@
 .champion-text {
     font-family: 'Great Vibes', cursive;
-    font-size: 48px;
-    color: gold;
+    font-size: 58px;
+    list-style: 1rem;
+    color: #fff;
 }
 
 .qpuc-card {
@@ -16,11 +17,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    animation: flipcard 5s ease-in;
 }
 
 .frontcard {
     @extend .qpuc-card;
+    animation: flipcard 0.5s ease-in alternate;
     &.nonactive {
         display: none;
     }
@@ -28,6 +29,7 @@
 
 .backcard {
     @extend .qpuc-card;
+    animation: flipcard 0.5s ease-in alternate;
     &.nonactive {
         display: none;
     }
@@ -35,12 +37,9 @@
 
 @keyframes flipcard {
     0% {
-        transform: rotateY(0deg);
-    }
-    50% {
         transform: rotateY(180deg);
     }
     100% {
-        transform: rotateY(360deg);
+        transform: rotateY(0deg);
     }
 }

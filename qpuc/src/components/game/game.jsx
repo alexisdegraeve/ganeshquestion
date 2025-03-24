@@ -8,10 +8,6 @@ const Game = () => {
   const [startQuestions, setStartQuestions] = useState(false);
   const [score, setScore] = useState(0);
 
-  const toggleStartQuestions = () => {
-    setStartQuestions((prevStart) => !prevStart);
-  };
-
   const handleTimeEnd = () => {
     console.log("Le timer est terminé !");
     setStartQuestions(false); // On arrête le timer après expiration
@@ -21,10 +17,19 @@ const Game = () => {
     setScore(newScore);
   };
 
+  const handleStartGame = () => {
+    setStartQuestions(true);
+  };
+
+  const handleStopGame = () => {
+    setStartQuestions(false);
+  };
+
+
   return (
     <>
       <div class="container">
-        <h1 className="champion text-center mt-4">Question Pour Un Champion</h1>
+        <h1 className="champion text-center mb-2">Question Pour Un Champion</h1>
 
         <div class="row">
           <div class="col-md-6">
@@ -37,21 +42,21 @@ const Game = () => {
           <div class="col-md-6">
             <div class="right-column">
 
-                    
-              <button className="btn btn-primary" onClick={toggleStartQuestions}>
-                {startQuestions ? "stop game" : "start game"}
-              </button>
-              {
-                startQuestions ?  
-                <>
-                  <div>Current Score {score}</div>
-                  <Question
-                    showFront={false}
+              <Question
                     question="Quel est la couleur du cheval de Napoleon?"
                     answer="blanc"
                     points={score}
                     onCountScore={handleScore}
-                  ></Question>
+                    onStartGame={handleStartGame}
+                    onStopGame={handleStopGame}>
+              </Question>
+
+
+              {
+                startQuestions ?  
+                <>
+                  <div>Current Score {score}</div>
+
     
                   <TimerExample start={startQuestions} onTimeEnd={handleTimeEnd} />
                   </>
