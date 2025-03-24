@@ -1,10 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import "./question.scss";
 
-const Question = ({ question, answer, points, onCountScore, onStartGame, onStopGame }) => {
+const Question = ({ start, question, answer, points, onCountScore, onStartGame, onStopGame, onNextQuestion }) => {
   const [myAnswer, setMyAnswer] = useState("");
   const [correct, setCorrect] = useState();
-  const [showFront, setShowFront] = useState(true);
   const inputAnswer = useRef(null);
 
 
@@ -18,10 +17,12 @@ const Question = ({ question, answer, points, onCountScore, onStartGame, onStopG
 
   const checkAnswer = () => {
     if (myAnswer.toLowerCase() == answer.toLowerCase()) {
-      onCountScore(points + 3);
+      onCountScore(points + 1);
       setCorrect(true);
+      nextQuestion()
     } else {
       setCorrect(false);
+      nextQuestion()
     }
   };
 
@@ -32,26 +33,34 @@ const Question = ({ question, answer, points, onCountScore, onStartGame, onStopG
   };
 
   const startGame = () => {
-    setShowFront(false)
+    onCountScore(-1)
     onStartGame(true)
   }
 
   const stopGame  = () => {
-    setShowFront(true)
     onStopGame(false)
+  }
+
+  const nextQuestion = () => {
+    onNextQuestion(true)
+    setMyAnswer('')
+  }
+
+  const skipQuestion = () => {
+    nextQuestion()
   }
 
   return (
     <>
       <div className="questioncard">
-        <div className={"frontcard " + (showFront ? "" : "nonactive")}>
+        <div className={"frontcard " + (!start ? "" : "nonactive")}>
           <span className="champion-text text-center">Question Pour Un <br />Champion</span>
           <button className="btn btn-primary mt-2" onClick={startGame}>
                 START
           </button>
         </div>
 
-        <div className={"backcard " + (!showFront ? "" : "nonactive")}>
+        <div className={"backcard " + (start ? "" : "nonactive")}>
           <h5>{question}</h5>
           <button className="btn btn-primary" onClick={stopGame}>
                 STOP GAME
@@ -90,7 +99,7 @@ const Question = ({ question, answer, points, onCountScore, onStartGame, onStopG
           )}
 
           <br />
-          <button className="btn btn-danger">Passe</button>
+          <button className="btn btn-danger"  onClick={skipQuestion}>Passe</button>
         </div>
       </div>
     </>

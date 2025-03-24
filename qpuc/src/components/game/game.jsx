@@ -6,7 +6,9 @@ import './game.scss'
 
 const Game = () => {
   const [startQuestions, setStartQuestions] = useState(false);
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(-1);
+  const [question, setQuestion] = useState('Quel est la couleur du cheval de Napoleon?');
+  const [answer, setAnwser] = useState('blanc');
 
   const handleTimeEnd = () => {
     console.log("Le timer est terminé !");
@@ -25,6 +27,12 @@ const Game = () => {
     setStartQuestions(false);
   };
 
+  const handleNextQuestion = () => {
+    const rand = Math.floor(1 + Math.random() * (20));
+    setQuestion('Quel est la couleur du cheval de Napoleon? ' + rand)
+    setAnwser('blanc' + rand)
+  }
+
 
   return (
     <>
@@ -41,22 +49,27 @@ const Game = () => {
           </div>
           <div class="col-md-6">
             <div class="right-column">
-
+              <div>
+                {!startQuestions && score === 4 ? 'BRAVO VOUS AVEZ GAGNEZ' : ''}
+                {!startQuestions && score === 3 ? 'TRES BON SCORE' : ''}
+                {!startQuestions && (score < 3 && score > -1) ? 'VOUS FEREZ MIEUX LA FOIS PROCHAINE' : ''}
+              </div>
+            <div>{!startQuestions && score >-1 ? 'Current Score: ' + score : ''}</div>
               <Question
-                    question="Quel est la couleur du cheval de Napoleon?"
-                    answer="blanc"
+                    question={question}
+                    answer={answer}
                     points={score}
+                    start={startQuestions}
                     onCountScore={handleScore}
                     onStartGame={handleStartGame}
-                    onStopGame={handleStopGame}>
+                    onStopGame={handleStopGame}
+                    onNextQuestion={handleNextQuestion}>
               </Question>
 
-
+              
               {
                 startQuestions ?  
                 <>
-                  <div>Current Score {score}</div>
-
     
                   <TimerExample start={startQuestions} onTimeEnd={handleTimeEnd} />
                   </>
@@ -73,3 +86,4 @@ const Game = () => {
 };
 
 export default Game;
+
