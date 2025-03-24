@@ -1,12 +1,19 @@
+import { useState } from 'react'
 import './question.scss'
 
 const Question = ({showFront, question, answer, points}) => {
+    const [myAnswer, setMyAnswer] = useState('');
+    const [correct, setCorrect] = useState();
 
-    const checkAnswer = (myAnswer) => {
+    const handleMyAnswer = (event) => {
+        setMyAnswer(event.target.value)
+    }
+
+    const checkAnswer = () => {
             if(myAnswer == answer) {
-                return true
+                setCorrect(true);
             } else {
-                return false
+                setCorrect(false);
             }
     }
 
@@ -21,10 +28,12 @@ const Question = ({showFront, question, answer, points}) => {
                     {question}
                     {answer}
                     {points}
-                    <input></input>
-                    <button class="btn btn-primary" onClick={checkAnswer()}>
+                    <input type="text" value={myAnswer} onChange={handleMyAnswer} placeholder='Your answer'></input>
+                    <button class="btn btn-primary" onClick={checkAnswer}>
                         VALID!
                     </button>
+                    YOUR ANSWER IS CORRECT { correct ? 'YES ' : 'NO'}
+                    <br />
                 </div>
             </div>
     </>);
