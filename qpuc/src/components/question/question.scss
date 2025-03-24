@@ -9,12 +9,18 @@
     width: 100%;
     display: flex;
     backface-visibility: hidden;
+    border-radius: 1rem;
+    /* Coins arrondis */
+    background: linear-gradient(180deg, #FFD700 0%, #FF8C00 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: flipcard 5s ease-in;
 }
 
 .frontcard {
     @extend .qpuc-card;
-    background-color: red;
-    animation: flipcard 5s ease-in;
     &.nonactive {
         display: none;
     }
@@ -22,8 +28,6 @@
 
 .backcard {
     @extend .qpuc-card;
-    background-color: cyan;
-    animation: flipcard 1s ease-in;
     &.nonactive {
         display: none;
     }
