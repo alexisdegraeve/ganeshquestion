@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import './question.scss'
 
-const Question = ({showFront, question, answer, points}) => {
+const Question = ({showFront, question, answer, points, onCountScore}) => {
     const [myAnswer, setMyAnswer] = useState('');
     const [correct, setCorrect] = useState();
     const inputAnswer = useRef(null)
@@ -16,6 +16,7 @@ const Question = ({showFront, question, answer, points}) => {
 
     const checkAnswer = () => {
             if(myAnswer.toLowerCase() == answer.toLowerCase()) {
+                onCountScore(points + 3)
                 setCorrect(true);
             } else {
                 setCorrect(false);

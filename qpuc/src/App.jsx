@@ -7,6 +7,7 @@ import Question from './components/question/question'
 function App() {
   const [count, setCount] = useState(0)
   const [startQuestions, setStartQuestions] = useState(false)
+  const [score, setScore]= useState(0)
 
   const toggleStartQuestions = () => {
     setStartQuestions((prevStart) => ! prevStart);
@@ -17,13 +18,20 @@ function App() {
     setStartQuestions(false); // On arrête le timer après expiration
   };
 
+  const handleScore = (newScore) => {
+    setScore(newScore)
+  }
+
   return (
     <>
 
-      <Question showFront={false} question="Quel est la couleur du cheval de Napoleon?" answer="blanc" points={1}></Question>
+      <Question showFront={false} question="Quel est la couleur du cheval de Napoleon?" answer="blanc" points={score} onCountScore={handleScore}></Question>
+      <hr />
+      <div>Current Score {score}</div>
       <div className="container">
             <FourInOne></FourInOne>
       </div>
+
 
       <div className="container">
         <TimerExample start={startQuestions} onTimeEnd={handleTimeEnd}  /> 
