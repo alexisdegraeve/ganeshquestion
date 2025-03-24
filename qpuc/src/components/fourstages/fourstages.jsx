@@ -7,7 +7,8 @@ const FourStages = () => {
             <Stage level="4"></Stage>
             <Stage level="3"></Stage>
             <Stage level="2"></Stage>
-            <Stage level="1" active={true}></Stage>
+            <Stage level="1"></Stage>
+            <Stage level="0" active={true}></Stage>
         </div>
     );
 }
