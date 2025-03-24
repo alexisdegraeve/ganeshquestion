@@ -1,6 +1,6 @@
 body {
-    background-color: #f4f4f4;
     font-family: Arial, sans-serif;
+    background: radial-gradient(circle at center, #0a0f38, #020617) !important;
 }
 
 :root {
@@ -14,6 +14,7 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    --bs-heading-color: #fff !important;
 }
 
 a {
@@ -37,6 +38,7 @@ body {
 h1 {
     font-size: 3.2em;
     line-height: 1.1;
+    color: red;
 }
 
 button {

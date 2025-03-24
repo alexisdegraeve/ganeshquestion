@@ -3,7 +3,7 @@ import "./fourstages.scss"
 
 const FourStages = () => {
     return (
-        <div className="fourstages">
+        <div>
             <Stage level="4"></Stage>
             <Stage level="3"></Stage>
             <Stage level="2"></Stage>
