@@ -2,8 +2,6 @@ import './stage.scss'
 
 const Stage = ({level, active}) => {
     return (
-        <div >
-            <div>
             <svg  viewBox="0 0 360 280" height="280" width="360" xmlns="http://www.w3.org/2000/svg" className={'stage ' + (active ? 'active' : '')}>
                 <defs>
                     <linearGradient id="header-shape-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -16,11 +14,6 @@ const Stage = ({level, active}) => {
                 <text x="43%" y="53%" dominantBaseline="middle" textAnchor="middle" className="heavy">{ level }</text>
                 Sorry, your browser does not support inline SVG.
                 </svg>
-
-            </div>
-            
-            
-        </div>
     );
 }
 
