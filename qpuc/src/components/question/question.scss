@@ -1,0 +1,13 @@
+.frontcard {
+    display: block;
+    &.visible {
+        display: none;
+    }
+}
+
+.backcard {
+    display: block;
+    &.visible {
+        display: none;
+    }
+}

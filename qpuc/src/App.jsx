@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.scss'
 import TimerExample from './components/timerexample/timerexample' 
 import FourInOne from './components/fourstages/fourstages'
+import Question from './components/question/question'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,8 @@ function App() {
 
   return (
     <>
+
+      <Question showFront={false} question="Quel est la couleur du cheval de Napoleon?" answer="blanc" points={1}></Question>
       <div className="container">
             <FourInOne></FourInOne>
       </div>

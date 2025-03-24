@@ -1,7 +1,7 @@
 import Stage from "../stage/stage";
 import "./fourstages.scss"
 
-function FourStages() {
+const FourStages = () => {
     return (
         <div className="fourstages">
             <Stage level="4"></Stage>
