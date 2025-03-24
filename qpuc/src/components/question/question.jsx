@@ -29,10 +29,12 @@ const Question = ({showFront, question, answer, points, onCountScore}) => {
         }
     }
 
+
     return (<>
             <div className="questioncard">
                 <div className ={'frontcard '+ (showFront ? '' : 'nonactive')}>
                     AVANT
+                    <span className="champion-text">Champion</span>
                 </div>
 
                 <div className ={'backcard '+ (!showFront ? '' : 'nonactive')}>

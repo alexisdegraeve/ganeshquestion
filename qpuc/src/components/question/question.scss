@@ -1,14 +1,19 @@
-.questioncard {
-    width: 200px;
-    height: 300px;
+.champion-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 48px;
+    color: gold;
+}
+
+.qpuc-card {
+    height: 20rem;
+    width: 100%;
+    display: flex;
+    backface-visibility: hidden;
 }
 
 .frontcard {
-    display: block;
-    backface-visibility: hidden;
+    @extend .qpuc-card;
     background-color: red;
-    height: 100%;
-    width: 100%;
     animation: flipcard 5s ease-in;
     &.nonactive {
         display: none;
@@ -16,12 +21,9 @@
 }
 
 .backcard {
-    display: block;
-    backface-visibility: hidden;
+    @extend .qpuc-card;
     background-color: cyan;
-    height: 100%;
-    width: 100%;
-    animation: flipcard 5s ease-in;
+    animation: flipcard 1s ease-in;
     &.nonactive {
         display: none;
     }
@@ -33,5 +35,8 @@
     }
     50% {
         transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(360deg);
     }
 }
