@@ -1,0 +1,197 @@
+[{
+        "theme": "Nature",
+        "questions": [{
+                "question": "Quel est l'animal national de l'Australie ?",
+                "difficulty": 1,
+                "answers": ["Kangourou", "Koala", "Dromadaire", "Panda"],
+                "correct_answer": "Kangourou"
+            },
+            {
+                "question": "Quelle est la couleur de la neige ?",
+                "difficulty": 2,
+                "answers": ["Blanc", "Bleu", "Rouge", "Jaune"],
+                "correct_answer": "Blanc"
+            },
+            {
+                "question": "Quel est l'océan qui borde les côtes de la Californie ?",
+                "difficulty": 3,
+                "answers": ["Atlantique", "Indien", "Pacifique", "Arctique"],
+                "correct_answer": "Pacifique"
+            },
+            {
+                "question": "Quel est le plus grand désert du monde ?",
+                "difficulty": 4,
+                "answers": ["Sahara", "Gobi", "Antarctique", "Karakum"],
+                "correct_answer": "Antarctique"
+            }
+        ]
+    },
+    {
+        "theme": "Musique",
+        "questions": [{
+                "question": "Qui a chanté la chanson 'Billie Jean' ?",
+                "difficulty": 1,
+                "answers": ["Michael Jackson", "Elvis Presley", "Madonna", "Lady Gaga"],
+                "correct_answer": "Michael Jackson"
+            },
+            {
+                "question": "Quel instrument de musique est joué avec des touches ?",
+                "difficulty": 2,
+                "answers": ["Piano", "Guitare", "Violon", "Batterie"],
+                "correct_answer": "Piano"
+            },
+            {
+                "question": "Quel compositeur a écrit la symphonie 'L'Ode à la joie' ?",
+                "difficulty": 3,
+                "answers": ["Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johannes Brahms", "Frédéric Chopin"],
+                "correct_answer": "Ludwig van Beethoven"
+            },
+            {
+                "question": "Quel groupe a chanté 'Bohemian Rhapsody' ?",
+                "difficulty": 4,
+                "answers": ["The Beatles", "Queen", "The Rolling Stones", "Pink Floyd"],
+                "correct_answer": "Queen"
+            }
+        ]
+    },
+    {
+        "theme": "Histoire",
+        "questions": [{
+                "question": "Qui était le premier président des États-Unis ?",
+                "difficulty": 1,
+                "answers": ["Abraham Lincoln", "George Washington", "Thomas Jefferson", "John Adams"],
+                "correct_answer": "George Washington"
+            },
+            {
+                "question": "En quelle année la Révolution française a-t-elle commencé ?",
+                "difficulty": 2,
+                "answers": ["1789", "1776", "1799", "1804"],
+                "correct_answer": "1789"
+            },
+            {
+                "question": "Qui a été l'empereur de Rome au moment de la chute de l'Empire romain d'Occident ?",
+                "difficulty": 3,
+                "answers": ["Jules César", "Néron", "Romulus Augustule", "Auguste"],
+                "correct_answer": "Romulus Augustule"
+            },
+            {
+                "question": "Qui a fondé l'Empire mongol ?",
+                "difficulty": 4,
+                "answers": ["Gengis Khan", "Kublai Khan", "Attila", "Tamerlan"],
+                "correct_answer": "Gengis Khan"
+            }
+        ]
+    },
+    {
+        "theme": "Géographie",
+        "questions": [{
+                "question": "Quelle est la capitale de la France ?",
+                "difficulty": 1,
+                "answers": ["Paris", "Lyon", "Marseille", "Nice"],
+                "correct_answer": "Paris"
+            },
+            {
+                "question": "Quel pays est le plus grand du monde en superficie ?",
+                "difficulty": 2,
+                "answers": ["États-Unis", "Chine", "Brésil", "Russie"],
+                "correct_answer": "Russie"
+            },
+            {
+                "question": "Sur quel continent se trouve le désert du Sahara ?",
+                "difficulty": 3,
+                "answers": ["Europe", "Afrique", "Asie", "Amérique du Sud"],
+                "correct_answer": "Afrique"
+            },
+            {
+                "question": "Quel est le plus grand lac d'eau douce en superficie ?",
+                "difficulty": 4,
+                "answers": ["Lac Baïkal", "Lac Supérieur", "Lac Victoria", "Lac Tanganyika"],
+                "correct_answer": "Lac Supérieur"
+            }
+        ]
+    },
+    {
+        "theme": "Grammaire",
+        "questions": [{
+                "question": "Quel est le genre du mot 'chien' ?",
+                "difficulty": 1,
+                "answers": ["Masculin", "Féminin", "Neutre", "Invariable"],
+                "correct_answer": "Masculin"
+            },
+            {
+                "question": "Quel est le pronom réfléchi dans la phrase 'Je me lave' ?",
+                "difficulty": 2,
+                "answers": ["Je", "Lave", "Me", "Se"],
+                "correct_answer": "Me"
+            },
+            {
+                "question": "Comment s'appelle l'action de remplacer un nom par un pronom ?",
+                "difficulty": 3,
+                "answers": ["Conjugaison", "Coordination", "Substitution", "Anaphore"],
+                "correct_answer": "Substitution"
+            },
+            {
+                "question": "Quel est le type de verbe dans la phrase 'Il mange' ?",
+                "difficulty": 4,
+                "answers": ["Verbe d'état", "Verbe d'action", "Verbe transitif", "Verbe impersonnel"],
+                "correct_answer": "Verbe d'action"
+            }
+        ]
+    },
+    {
+        "theme": "Langues",
+        "questions": [{
+                "question": "Comment dit-on 'Bonjour' en anglais ?",
+                "difficulty": 1,
+                "answers": ["Hello", "Bonjour", "Hi", "Ciao"],
+                "correct_answer": "Hello"
+            },
+            {
+                "question": "Quel est le mot espagnol pour 'chat' ?",
+                "difficulty": 2,
+                "answers": ["Perro", "Gato", "Luna", "Amigo"],
+                "correct_answer": "Gato"
+            },
+            {
+                "question": "Que signifie 'merci' en japonais ?",
+                "difficulty": 3,
+                "answers": ["Arigato", "Konnichiwa", "Sayonara", "Banzai"],
+                "correct_answer": "Arigato"
+            },
+            {
+                "question": "Comment dit-on 'merci' en russe ?",
+                "difficulty": 4,
+                "answers": ["Gracias", "Merci", "Danke", "Spasiba"],
+                "correct_answer": "Spasiba"
+            }
+        ]
+    },
+    {
+        "theme": "Animaux",
+        "questions": [{
+                "question": "Quel est l'animal qui fait 'meuh' ?",
+                "difficulty": 1,
+                "answers": ["Vache", "Chien", "Chat", "Mouton"],
+                "correct_answer": "Vache"
+            },
+            {
+                "question": "Quel est l'animal national de la Chine ?",
+                "difficulty": 2,
+                "answers": ["Panda", "Dragon", "Tigre", "Ours"],
+                "correct_answer": "Panda"
+            },
+            {
+                "question": "Quel est l'animal le plus rapide du monde ?",
+                "difficulty": 3,
+                "answers": ["Guépard", "Aigle royal", "Lion", "Antilope"],
+                "correct_answer": "Guépard"
+            },
+            {
+                "question": "Quel est l'animal qui vit dans une ruche ?",
+                "difficulty": 4,
+                "answers": ["Fourmi", "Abeille", "Cigale", "Mouches"],
+                "correct_answer": "Abeille"
+            }
+        ]
+    }
+]

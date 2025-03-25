@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import "./question.scss";
 
-const Question = ({ start, question, answer, points, onCountScore, onStartGame, onStopGame, onNextQuestion }) => {
+
+const Question = ({ start, difficulty, theme, questions, points, onCountScore, onStartGame, onStopGame, onNextQuestion }) => {
   const [myAnswer, setMyAnswer] = useState("");
   const [correct, setCorrect] = useState();
   const inputAnswer = useRef(null);
+  
 
 
   useEffect(() => {
@@ -16,7 +18,7 @@ const Question = ({ start, question, answer, points, onCountScore, onStartGame, 
   };
 
   const checkAnswer = () => {
-    if (myAnswer.toLowerCase() == answer.toLowerCase()) {
+    if (myAnswer.toLowerCase() == questions[difficulty-1].correct_answer.toLowerCase()) {
       onCountScore(points + 1);
       setCorrect(true);
       nextQuestion()
@@ -78,9 +80,10 @@ const Question = ({ start, question, answer, points, onCountScore, onStartGame, 
             </span>
         </div>
         <div class="card-body">
-          <h5>{question}</h5>
-          {answer}
-          {points}
+          { theme }
+          <h5>{questions[difficulty]?.question}</h5>
+          {questions[difficulty]?.correct_answer}
+          {difficulty}
           <form>
             <div class="input-group mb-3">
               <input

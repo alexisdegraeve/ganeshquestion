@@ -3,12 +3,20 @@ import TimerExample from "./../timerexample/timerexample";
 import FourInOne from "./../fourstages/fourstages";
 import Question from "./../question/question";
 import './game.scss'
+import questionsData from './../../assets/questions.json';
 
 const Game = () => {
   const [startQuestions, setStartQuestions] = useState(false);
   const [score, setScore] = useState(-1);
-  const [question, setQuestion] = useState('Quel est la couleur du cheval de Napoleon?');
-  const [answer, setAnwser] = useState('blanc');
+  // const [question, setQuestion] = useState('Quel est la couleur du cheval de Napoleon?');
+  // const [answer, setAnwser] = useState('blanc');
+  const [theme, setTheme] = useState('');
+  const [difficulty, setDifficulty] = useState(1);
+  const [questions, setQuestions] = useState([]);
+
+  // useEffect(() => {
+  //   randomQuestion();
+  // });
 
   const handleTimeEnd = () => {
     console.log("Le timer est terminé !");
@@ -20,6 +28,7 @@ const Game = () => {
   };
 
   const handleStartGame = () => {
+    randomQuestion();
     setStartQuestions(true);
   };
 
@@ -28,9 +37,21 @@ const Game = () => {
   };
 
   const handleNextQuestion = () => {
-    const rand = Math.floor(1 + Math.random() * (20));
-    setQuestion('Quel est la couleur du cheval de Napoleon? ' + rand)
-    setAnwser('blanc' + rand)
+    randomQuestion();
+    // const rand = Math.floor(1 + Math.random() * (20));
+    // setQuestion('Quel est la couleur du cheval de Napoleon? ' + rand)
+    // setAnwser('blanc' + rand)
+  }
+
+  const randomQuestion = () => {
+    const rand = Math.floor(1 + Math.random() * 4);
+    console.log(rand);
+    setTheme(questionsData[rand].theme);
+    setQuestions(questionsData[rand].questions);
+    setDifficulty(difficulty + 1)
+
+    console.log(theme);
+    console.log(questions);
   }
 
 
@@ -47,8 +68,9 @@ const Game = () => {
               </div>
             <div>{!startQuestions && score >-1 ? 'Current Score: ' + score : ''}</div>
               <Question
-                    question={question}
-                    answer={answer}
+                    theme = {theme}
+                    questions={questions}
+                    difficulty = {difficulty}
                     points={score}
                     start={startQuestions}
                     onCountScore={handleScore}
