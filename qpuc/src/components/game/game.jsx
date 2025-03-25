@@ -43,24 +43,37 @@ const Game = () => {
     // setAnwser('blanc' + rand)
   }
 
-  const randomQuestion = () => {
-    const rand = Math.floor(1 + Math.random() * 4);
+  const handleCheckAnswer = (correct) => {
+    if(correct) {
+      setDifficulty(difficulty+1);
+    } else {
+      setDifficulty(1);
+    }
+  }
+
+  const randomQuestion = () => {    
+    const totalQuestions = questionsData.length - 1;
+    const rand = Math.floor(Math.random() * totalQuestions);
     console.log(rand);
+    console.log(totalQuestions);
     setTheme(questionsData[rand].theme);
     setQuestions(questionsData[rand].questions);
-    setDifficulty(difficulty + 1)
+    // const difficulty = Math.floor(Math.random() * 3) +1 ;
+    // setDifficulty(difficulty)
 
-    console.log(theme);
-    console.log(questions);
+    /* Si réussi alors */ 
+
+    console.log(JSON.stringify(theme));
+    console.log(JSON.stringify(questions));
   }
 
 
   return (
     <>
-      <div class="container">
+      <div className="container">
         <div className="game-container">
-            <FourInOne start={startQuestions}></FourInOne>
-            <div class="right-part">
+            <FourInOne start={startQuestions} difficulty={difficulty}></FourInOne>
+            <div className="right-part">
               <div>
                 {!startQuestions && score === 4 ? 'BRAVO VOUS AVEZ GAGNEZ' : ''}
                 {!startQuestions && score === 3 ? 'TRES BON SCORE' : ''}
@@ -75,8 +88,9 @@ const Game = () => {
                     start={startQuestions}
                     onCountScore={handleScore}
                     onStartGame={handleStartGame}
-                    onStopGame={handleStopGame}
-                    onNextQuestion={handleNextQuestion}>
+                    onStopGame={handleStopGame}                    
+                    onNextQuestion={handleNextQuestion}
+                    onCheckAnswer={handleCheckAnswer}>
               </Question>
 
               

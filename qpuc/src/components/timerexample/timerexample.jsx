@@ -20,7 +20,9 @@ const TimerExample = ({ start, onTimeEnd }) => {
         if (prevTime <= 1) {
           clearInterval(timerRef.current); // Stoppe le timer quand le temps est écoulé
           timerRef.current = null;
-          onTimeEnd()
+          setTimeout(() => {
+            onTimeEnd();
+          }, 0);
           return 0;
         }
         return prevTime - 1; // Décrémente
