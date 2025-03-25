@@ -1,13 +1,28 @@
-h1.champion {
-    font-family: 'Great Vibes', cursive;
-    font-size: 4rem;
-    color: gold;
-    margin-bottom: 2rem;
-}
-
-@media (max-width: 767px) {
+    .game-container {
+        display: flex;
+        .right-part {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+    }
+    
     h1.champion {
-        font-size: 2.75rem;
+        font-family: 'Great Vibes', cursive;
+        font-size: 4rem;
+        color: gold;
         margin-bottom: 2rem;
     }
-}
+    
+    @media (max-width: 767px) {
+        h1.champion {
+            font-size: 2.75rem;
+            margin-bottom: 2rem;
+        }
+        .game-container {
+            flex-direction: column;
+            .right-part {
+                flex-direction: column;
+            }
+        }
+    }

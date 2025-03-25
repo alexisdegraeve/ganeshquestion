@@ -52,19 +52,33 @@ const Question = ({ start, question, answer, points, onCountScore, onStartGame, 
 
   return (
     <>
-      <div className="questioncard">
-        <div className={"frontcard " + (!start ? "" : "nonactive")}>
-          <span className="champion-text text-center">Question Pour Un <br />Champion</span>
-          <button className="btn btn-primary mt-2" onClick={startGame}>
-                START
+      <div className={"card text-white bg-dark mt-2 " + (!start ? "" : "nonactive")}>
+        <div class="card-header">
+          <span className="title">
+            Question Pour Un <span className="champion-text">Champion</span>
+          </span>
+        </div>
+        <div class="card-body">
+            <p className="text-dark">
+              Bienvenue dans question pour un champion.
+            </p>
+        </div>
+        <div class="card-footer">
+          <button className="btn btn-lg btn-primary mt-2" onClick={startGame}>
+            START
           </button>
         </div>
+      </div>
 
-        <div className={"backcard " + (start ? "" : "nonactive")}>
+
+      <div className={"card text-white bg-dark mt-2 " + (start ? "" : "nonactive")}>
+        <div class="card-header">          
+          <span className="title">
+              Question Pour Un <span className="champion-text">Champion</span>
+            </span>
+        </div>
+        <div class="card-body">
           <h5>{question}</h5>
-          <button className="btn btn-primary" onClick={stopGame}>
-                STOP GAME
-          </button>
           {answer}
           {points}
           <form>
@@ -97,11 +111,17 @@ const Question = ({ start, question, answer, points, onCountScore, onStartGame, 
               YOUR ANSWER IS NOT CORRECT
             </div>
           )}
-
-          <br />
-          <button className="btn btn-danger"  onClick={skipQuestion}>Passe</button>
+        </div>
+        <div class="card-footer">
+        <button className="btn btn-danger" onClick={skipQuestion}>
+            Passe
+          </button>
+        <button className="btn btn-primary" onClick={stopGame}>
+            STOP GAME
+          </button>
         </div>
       </div>
+
     </>
   );
 };

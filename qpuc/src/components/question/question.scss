@@ -1,60 +1,80 @@
-                .champion-text {
-                    font-family: 'Great Vibes', cursive;
-                    font-size: 58px;
-                    list-style: 1rem;
-                    color: #fff;
-                }
-                
-                .qpuc-card {
-                    height: 20rem;
-                    width: 40rem;
-                    display: flex;
-                    backface-visibility: hidden;
-                    border-radius: 1rem;
-                    /* Coins arrondis */
-                    background: linear-gradient(180deg, #FFD700 0%, #FF8C00 100%);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    flex-direction: column;
-                }
-                
-                .frontcard {
-                    @extend .qpuc-card;
-                    animation: flipcard 0.5s ease-in alternate;
-                    &.nonactive {
-                        display: none;
-                    }
-                }
-                
-                .backcard {
-                    @extend .qpuc-card;
-                    animation: flipcard 0.5s ease-in alternate;
-                    &.nonactive {
-                        display: none;
-                    }
-                }
-                
-                @keyframes flipcard {
-                    0% {
-                        transform: rotateY(180deg);
-                    }
-                    100% {
-                        transform: rotateY(0deg);
-                    }
-                }
-                
-                @media (max-width: 767px) {
-                    .qpuc-card {
-                        height: 20rem;
-                        width: auto;
-                    }
-                    .champion-text {
-                        font-size: 2.75rem;
-                    }
-                    .backcard {
-                        h5 {
-                            font-size: 1rem;
-                        }
-                    }
-                }
+.card {
+    flex-grow: 1;
+    animation: flipcard 0.5s ease-in alternate;
+    .title {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+    .card-body {
+        background: linear-gradient(180deg, #FFD700 0%, #FF8C00 100%);
+    }
+    &.nonactive {
+        display: none;
+    }
+}
+
+.champion-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 58px;
+    list-style: 1rem;
+    color: #fff;
+}
+
+.qpuc-card {
+    height: 20rem;
+    width: 40rem;
+    display: flex;
+    backface-visibility: hidden;
+    border-radius: 1rem;
+    /* Coins arrondis */
+    background: linear-gradient(180deg, #FFD700 0%, #FF8C00 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.frontcard {
+    @extend .qpuc-card;
+    animation: flipcard 0.5s ease-in alternate;
+    &.nonactive {
+        display: none;
+    }
+}
+
+.backcard {
+    @extend .qpuc-card;
+    animation: flipcard 0.5s ease-in alternate;
+    &.nonactive {
+        display: none;
+    }
+}
+
+@keyframes flipcard {
+    0% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+@media (max-width: 767px) {
+    .qpuc-card {
+        height: 20rem;
+        width: auto;
+    }
+    .champion-text {
+        font-size: 2rem;
+    }
+    .backcard {
+        h5 {
+            font-size: 1rem;
+        }
+    }
+    .card {
+        .title {
+            font-size: 1.3rem;
+        }
+    }
+}

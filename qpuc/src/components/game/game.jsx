@@ -37,18 +37,9 @@ const Game = () => {
   return (
     <>
       <div class="container">
-        <h1 className="champion text-center">Question Pour Un Champion</h1>
-
-        <div class="row">
-          <div class="col-md-2 col-lg-3">
-            <div class="left-column">
-              <div className="container">
-                <FourInOne start={startQuestions}></FourInOne>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-10 col-lg-9">
-            <div class="right-column">
+        <div className="game-container">
+            <FourInOne start={startQuestions}></FourInOne>
+            <div class="right-part">
               <div>
                 {!startQuestions && score === 4 ? 'BRAVO VOUS AVEZ GAGNEZ' : ''}
                 {!startQuestions && score === 3 ? 'TRES BON SCORE' : ''}
@@ -78,7 +69,6 @@ const Game = () => {
               }
 
             </div>
-          </div>
         </div>
       </div>
     </>
