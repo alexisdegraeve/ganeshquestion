@@ -91,17 +91,12 @@ const Game = () => {
     <>
       <div className="container">
         <div className="game-container">
-          {highscore}
             <FourInOne start={startQuestions} difficulty={difficulty} highscore={highscore}></FourInOne>
             <div className="right-part">
-              <div>
                 {!startQuestions && highscore === 4 ? <WinCard onRestartGame={handleRestartGame} /> : ''}
                 {!startQuestions && (highscore < 4 && highscore > -1) ? <LoseCard onRestartGame={handleRestartGame} /> : ''}
-              </div>
-            <div>{!startQuestions && score >-1 ? 'Current Score: ' + score : ''}</div>
 
-            {!startQuestions && score >-1 ? 'Current Score: ' + score : ''}
-
+            
 
                {!startQuestions  && highscore == -1 ?
                 <StartCard onStartGame={handleStartGame}></StartCard> : ''

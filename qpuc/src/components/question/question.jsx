@@ -33,10 +33,12 @@ const Question = ({
       //setCorrect(true);
       onCheckAnswer(true);
       onNextQuestion(true);
+      setMyAnswer('')
     } else {
       //setCorrect(false);
       onCheckAnswer(false);
       onNextQuestion(true);
+      setMyAnswer('')
     }
   };
 
@@ -73,10 +75,10 @@ const Question = ({
           </span>
         </div>
         <div className="card-body">
-          <span className="theme">{theme}</span>
-          <h5>{questions[difficulty - 1]?.question}</h5>
+          <span className="theme">Thème: {theme}</span>
+          <h5 className="mt-2">{questions[difficulty - 1]?.question}</h5>
           <form>
-            <div className="input-group mb-3">
+            <div className="input-group mb-3 mt-4">
               <input
                 className="form-control"
                 ref={inputAnswer}

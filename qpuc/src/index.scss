@@ -89,6 +89,7 @@
         }
         .card-body {
             background: linear-gradient(180deg, #FFD700 0%, #FF8C00 100%);
+            text-align: left;
         }
         &.nonactive {
             display: none;
