@@ -89,7 +89,7 @@ const Question = ({
                 onKeyDown={handleKeyDown}
               ></input>
               <button
-                className="btn btn-lg btn-success d-flex justify-content-center align-items-center"
+                className="btn btn-sm btn-lg btn-success d-flex justify-content-center align-items-center"
                 type="button"
                 id="button-addon2"
                 onClick={checkAnswer}
@@ -101,16 +101,16 @@ const Question = ({
         </div>
         <div className="card-footer d-flex">
           <button
-            className="btn btn-lg btn-secondary mt-2 d-flex justify-content-center align-items-center"
+            className="btn btn-sm btn-lg btn-secondary mt-2 d-flex justify-content-center align-items-center"
             onClick={skipQuestion}
           >
-            <i class="bi bi-skip-forward fs-2"></i><span className="ms-2"> PASSE</span>
+            <i className="bi bi-skip-forward fs-2"></i><span className="ms-2"> PASSE</span>
           </button>
           <button
-            className="btn btn-lg btn-danger mt-2 d-flex justify-content-center align-items-center ms-auto"
+            className="btn btn-sm btn-lg btn-danger mt-2 d-flex justify-content-center align-items-center ms-auto"
             onClick={stopGame}
           >
-            <i class="bi bi-stop fs-2"></i> <span className="ms-2"> STOP</span>
+            <i className="bi bi-stop fs-2"></i> <span className="ms-2"> STOP</span>
           </button>
         </div>
       </div>

@@ -44,8 +44,8 @@ const StartCard = ({ onStartGame }) => {
         <p>Bonne chance, et n'oubliez pas : chaque seconde compte !</p>
       </div>
       <div className="card-footer">
-        <button className="btn btn-lg btn-danger mt-2 d-flex justify-content-center align-items-center" onClick={onStartGame}>
-          <i class="bi bi-play fs-2"></i> <span>START</span> 
+        <button className="btn btn-sm btn-lg btn-danger mt-2 d-flex justify-content-center align-items-center" onClick={onStartGame}>
+          <i className="bi bi-play fs-2"></i> <span>START</span> 
         </button>
       </div>
     </div>
