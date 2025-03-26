@@ -30,6 +30,13 @@ const Game = () => {
     setScore(newScore);
   };
 
+  const handleRestartGame = () => {
+    setDifficulty(1);
+    setScore(-1);
+    setStartQuestions(false);
+  };
+
+
   const handleStartGame = () => {
     setDifficulty(1);
     setScore(-1);
@@ -83,8 +90,8 @@ const Game = () => {
             <FourInOne start={startQuestions} difficulty={difficulty}></FourInOne>
             <div className="right-part">
               <div>
-                {!startQuestions && score === 3 ? <WinCard onRestartGame={handleStartGame} /> : ''}
-                {!startQuestions && (score < 3 && score > -1) ? <LoseCard onRestartGame={handleStartGame} /> : ''}
+                {!startQuestions && score === 3 ? <WinCard onRestartGame={handleRestartGame} /> : ''}
+                {!startQuestions && (score < 3 && score > -1) ? <LoseCard onRestartGame={handleRestartGame} /> : ''}
               </div>
             <div>{!startQuestions && score >-1 ? 'Current Score: ' + score : ''}</div>
 
