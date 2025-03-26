@@ -11,6 +11,7 @@ import StartCard from "../start/start";
 const Game = () => {
   const [startQuestions, setStartQuestions] = useState(false);
   const [score, setScore] = useState(-1);
+  const [highscore, setHighscore] = useState(-1);
   // const [question, setQuestion] = useState('Quel est la couleur du cheval de Napoleon?');
   // const [answer, setAnwser] = useState('blanc');
   const [theme, setTheme] = useState('');
@@ -32,6 +33,7 @@ const Game = () => {
 
   const handleRestartGame = () => {
     setDifficulty(1);
+    setHighscore(-1);
     setScore(-1);
     setStartQuestions(false);
   };
@@ -39,6 +41,7 @@ const Game = () => {
 
   const handleStartGame = () => {
     setDifficulty(1);
+    setHighscore(-1);
     setScore(-1);
     randomQuestion();
     setStartQuestions(true);
@@ -64,6 +67,7 @@ const Game = () => {
     if(difficulty == 4) {
       setStartQuestions(false)
     }
+    setHighscore(difficulty)
   }
 
   const randomQuestion = () => {    
@@ -87,18 +91,19 @@ const Game = () => {
     <>
       <div className="container">
         <div className="game-container">
-            <FourInOne start={startQuestions} difficulty={difficulty}></FourInOne>
+          {highscore}
+            <FourInOne start={startQuestions} difficulty={difficulty} highscore={highscore}></FourInOne>
             <div className="right-part">
               <div>
-                {!startQuestions && score === 3 ? <WinCard onRestartGame={handleRestartGame} /> : ''}
-                {!startQuestions && (score < 3 && score > -1) ? <LoseCard onRestartGame={handleRestartGame} /> : ''}
+                {!startQuestions && highscore === 4 ? <WinCard onRestartGame={handleRestartGame} /> : ''}
+                {!startQuestions && (highscore < 4 && highscore > -1) ? <LoseCard onRestartGame={handleRestartGame} /> : ''}
               </div>
             <div>{!startQuestions && score >-1 ? 'Current Score: ' + score : ''}</div>
 
             {!startQuestions && score >-1 ? 'Current Score: ' + score : ''}
 
 
-               {!startQuestions  && score == -1 ?
+               {!startQuestions  && highscore == -1 ?
                 <StartCard onStartGame={handleStartGame}></StartCard> : ''
 
                }

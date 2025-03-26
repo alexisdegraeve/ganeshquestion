@@ -7,6 +7,12 @@
                         stroke-width: 6;
                         transition: fill 0.5s ease-in-out;
                     }
+                    &.highscore {
+                        polygon {
+                            stroke: yellow;
+                            stroke-width: 10;
+                        }
+                    }
                     &.active {
                         height: 10rem;
                         polygon {

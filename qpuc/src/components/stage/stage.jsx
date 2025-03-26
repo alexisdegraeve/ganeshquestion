@@ -1,8 +1,8 @@
 import './stage.scss'
 
-const Stage = ({level, active}) => {
+const Stage = ({level, active, highscore}) => {
     return (
-            <svg  viewBox="0 0 360 280" height="280" width="360" xmlns="http://www.w3.org/2000/svg" className={'stage ' + (active ? 'active' : '')}>
+            <svg  viewBox="0 0 360 280" height="280" width="360" xmlns="http://www.w3.org/2000/svg" className={'stage ' + (active ? ' active' : '')+ (highscore ? ' highscore': '')}>
                 <defs>
                     <linearGradient id="header-shape-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
                     <stop offset="0%" className='stop1' />
