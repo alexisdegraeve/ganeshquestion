@@ -193,5 +193,257 @@
                 "correct_answer": "Abeille"
             }
         ]
+    },
+    {
+        "theme": "Sport",
+        "questions": [{
+                "question": "Quel sport se joue avec un ballon rond et des buts ?",
+                "difficulty": 1,
+                "answers": ["Football", "Basketball", "Tennis", "Rugby"],
+                "correct_answer": "Football"
+            },
+            {
+                "question": "Combien de joueurs composent une équipe de basketball sur le terrain ?",
+                "difficulty": 2,
+                "answers": ["5", "6", "7", "11"],
+                "correct_answer": "5"
+            },
+            {
+                "question": "Dans quel pays sont nés les Jeux Olympiques modernes ?",
+                "difficulty": 3,
+                "answers": ["Grèce", "France", "États-Unis", "Italie"],
+                "correct_answer": "Grèce"
+            },
+            {
+                "question": "Quel coureur cycliste a remporté 5 fois le Tour de France consécutivement entre 1991 et 1995 ?",
+                "difficulty": 4,
+                "answers": ["Lance Armstrong", "Eddy Merckx", "Miguel Indurain", "Bernard Hinault"],
+                "correct_answer": "Miguel Indurain"
+            }
+        ]
+    },
+    {
+        "theme": "Cinéma",
+        "questions": [{
+                "question": "Quel personnage porte un sabre laser et une cape noire dans 'Star Wars' ?",
+                "difficulty": 1,
+                "answers": ["Darth Vader", "Luke Skywalker", "Yoda", "Obi-Wan Kenobi"],
+                "correct_answer": "Darth Vader"
+            },
+            {
+                "question": "Qui a réalisé le film 'Titanic' en 1997 ?",
+                "difficulty": 2,
+                "answers": ["James Cameron", "Steven Spielberg", "Christopher Nolan", "Quentin Tarantino"],
+                "correct_answer": "James Cameron"
+            },
+            {
+                "question": "Dans quel film voit-on une bague qui doit être détruite dans un volcan ?",
+                "difficulty": 3,
+                "answers": ["Le Seigneur des Anneaux", "Harry Potter", "Game of Thrones", "Les Chroniques de Narnia"],
+                "correct_answer": "Le Seigneur des Anneaux"
+            },
+            {
+                "question": "Quel film de science-fiction de 1968, réalisé par Stanley Kubrick, est considéré comme un chef-d'œuvre du genre ?",
+                "difficulty": 4,
+                "answers": ["2001, l'Odyssée de l'espace", "Blade Runner", "Metropolis", "Interstellar"],
+                "correct_answer": "2001, l'Odyssée de l'espace"
+            }
+        ]
+    },
+    {
+        "theme": "Sciences",
+        "questions": [{
+                "question": "Quel est l'astre qui éclaire la Terre durant la journée ?",
+                "difficulty": 1,
+                "answers": ["Soleil", "Lune", "Mars", "Vénus"],
+                "correct_answer": "Soleil"
+            },
+            {
+                "question": "Quel est l'élément chimique dont le symbole est O ?",
+                "difficulty": 2,
+                "answers": ["Oxygène", "Or", "Osmium", "Ozone"],
+                "correct_answer": "Oxygène"
+            },
+            {
+                "question": "Quel scientifique a découvert la loi de la gravitation universelle ?",
+                "difficulty": 3,
+                "answers": ["Isaac Newton", "Albert Einstein", "Galilée", "Nikola Tesla"],
+                "correct_answer": "Isaac Newton"
+            },
+            {
+                "question": "Quelle est la plus petite particule constituant la matière selon la physique quantique ?",
+                "difficulty": 4,
+                "answers": ["Quark", "Électron", "Neutron", "Photon"],
+                "correct_answer": "Quark"
+            }
+        ]
+    },
+    {
+        "theme": "Littérature",
+        "questions": [{
+                "question": "Quel écrivain a écrit 'Les Misérables' ?",
+                "difficulty": 1,
+                "answers": ["Victor Hugo", "Émile Zola", "Alexandre Dumas", "Gustave Flaubert"],
+                "correct_answer": "Victor Hugo"
+            },
+            {
+                "question": "Qui est l'auteur de 'Le Petit Prince' ?",
+                "difficulty": 2,
+                "answers": ["Antoine de Saint-Exupéry", "Jules Verne", "Jean de La Fontaine", "Molière"],
+                "correct_answer": "Antoine de Saint-Exupéry"
+            },
+            {
+                "question": "Dans quelle œuvre trouve-t-on le personnage de Don Quichotte ?",
+                "difficulty": 3,
+                "answers": ["Don Quichotte de la Manche", "Gargantua", "Les Trois Mousquetaires", "Candide"],
+                "correct_answer": "Don Quichotte de la Manche"
+            },
+            {
+                "question": "Quel est le véritable nom de l'écrivain George Sand ?",
+                "difficulty": 4,
+                "answers": ["Aurore Dupin", "Louise Labé", "Simone de Beauvoir", "Marguerite Yourcenar"],
+                "correct_answer": "Aurore Dupin"
+            }
+        ]
+    },
+    {
+        "theme": "Technologie",
+        "questions": [{
+                "question": "Quelle entreprise a créé l'iPhone ?",
+                "difficulty": 1,
+                "answers": ["Apple", "Samsung", "Google", "Huawei"],
+                "correct_answer": "Apple"
+            },
+            {
+                "question": "Quel est le langage de programmation principalement utilisé pour le développement web côté client ?",
+                "difficulty": 2,
+                "answers": ["JavaScript", "Python", "C++", "Java"],
+                "correct_answer": "JavaScript"
+            },
+            {
+                "question": "Quel scientifique est considéré comme le père de l'informatique moderne ?",
+                "difficulty": 3,
+                "answers": ["Alan Turing", "Bill Gates", "Steve Jobs", "Nikola Tesla"],
+                "correct_answer": "Alan Turing"
+            },
+            {
+                "question": "Quel est le nom du premier ordinateur électronique programmable de l'histoire ?",
+                "difficulty": 4,
+                "answers": ["ENIAC", "IBM 5100", "Colossus", "Apple I"],
+                "correct_answer": "ENIAC"
+            }
+        ]
+    },
+    {
+        "theme": "Mythologie",
+        "questions": [{
+                "question": "Quel dieu est le roi de l'Olympe dans la mythologie grecque ?",
+                "difficulty": 1,
+                "answers": ["Zeus", "Poséidon", "Hercule", "Hadès"],
+                "correct_answer": "Zeus"
+            },
+            {
+                "question": "Dans la mythologie égyptienne, quel dieu a une tête de chacal et est associé à la mort ?",
+                "difficulty": 2,
+                "answers": ["Anubis", "Osiris", "Râ", "Horus"],
+                "correct_answer": "Anubis"
+            },
+            {
+                "question": "Quel héros a accompli 12 travaux dans la mythologie grecque ?",
+                "difficulty": 3,
+                "answers": ["Héraclès", "Achille", "Persée", "Jason"],
+                "correct_answer": "Héraclès"
+            },
+            {
+                "question": "Comment s'appelle le serpent géant que Thor doit affronter lors du Ragnarök ?",
+                "difficulty": 4,
+                "answers": ["Jörmungandr", "Fafnir", "Fenrir", "Nidhogg"],
+                "correct_answer": "Jörmungandr"
+            }
+        ]
+    },
+    {
+        "theme": "Cuisine",
+        "questions": [{
+                "question": "Quel fruit est célèbre pour sa couleur jaune et sa forme allongée ?",
+                "difficulty": 1,
+                "answers": ["Banane", "Pomme", "Raisin", "Orange"],
+                "correct_answer": "Banane"
+            },
+            {
+                "question": "Quel pays est réputé pour avoir inventé les sushis ?",
+                "difficulty": 2,
+                "answers": ["Japon", "Chine", "Thaïlande", "Corée du Sud"],
+                "correct_answer": "Japon"
+            },
+            {
+                "question": "Quelle épice donne sa couleur jaune au curry ?",
+                "difficulty": 3,
+                "answers": ["Curcuma", "Safran", "Paprika", "Cumin"],
+                "correct_answer": "Curcuma"
+            },
+            {
+                "question": "Quel est le nom du processus de cuisson lente de la viande dans son propre jus, souvent utilisé en gastronomie française ?",
+                "difficulty": 4,
+                "answers": ["Braising", "Saisir", "Mijotage", "Blanchir"],
+                "correct_answer": "Braising"
+            }
+        ]
+    },
+    {
+        "theme": "Espace",
+        "questions": [{
+                "question": "Quelle planète est surnommée la planète rouge ?",
+                "difficulty": 1,
+                "answers": ["Mars", "Jupiter", "Saturne", "Venus"],
+                "correct_answer": "Mars"
+            },
+            {
+                "question": "Quel est le nom du premier homme à avoir marché sur la Lune ?",
+                "difficulty": 2,
+                "answers": ["Neil Armstrong", "Buzz Aldrin", "Youri Gagarine", "Chris Hadfield"],
+                "correct_answer": "Neil Armstrong"
+            },
+            {
+                "question": "Quelle est la plus grande planète du système solaire ?",
+                "difficulty": 3,
+                "answers": ["Jupiter", "Saturne", "Uranus", "Neptune"],
+                "correct_answer": "Jupiter"
+            },
+            {
+                "question": "Comment s'appelle le télescope spatial lancé en 2021 en remplacement de Hubble ?",
+                "difficulty": 4,
+                "answers": ["James Webb", "Kepler", "Voyager", "Chandra"],
+                "correct_answer": "James Webb"
+            }
+        ]
+    },
+    {
+        "theme": "Art",
+        "questions": [{
+                "question": "Quel artiste a peint la Joconde ?",
+                "difficulty": 1,
+                "answers": ["Léonard de Vinci", "Michel-Ange", "Van Gogh", "Pablo Picasso"],
+                "correct_answer": "Léonard de Vinci"
+            },
+            {
+                "question": "Quel courant artistique est caractérisé par des taches et des coups de pinceau visibles, comme dans les œuvres de Monet ?",
+                "difficulty": 2,
+                "answers": ["Impressionnisme", "Cubisme", "Surréalisme", "Expressionnisme"],
+                "correct_answer": "Impressionnisme"
+            },
+            {
+                "question": "Quel artiste est connu pour ses tableaux de tournesols et son oreille coupée ?",
+                "difficulty": 3,
+                "answers": ["Vincent Van Gogh", "Claude Monet", "Edvard Munch", "Paul Cézanne"],
+                "correct_answer": "Vincent Van Gogh"
+            },
+            {
+                "question": "Quel sculpteur français est l’auteur de la célèbre œuvre 'Le Penseur' ?",
+                "difficulty": 4,
+                "answers": ["Auguste Rodin", "Camille Claudel", "Antoine Bourdelle", "Jean-Baptiste Carpeaux"],
+                "correct_answer": "Auguste Rodin"
+            }
+        ]
     }
 ]
