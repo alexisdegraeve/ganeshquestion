@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "./question.scss";
 
 
-const Question = ({ start, difficulty, theme, questions, points, onCountScore, onStartGame, onStopGame, onNextQuestion, onCheckAnswer }) => {
+const Question = ({ start, difficulty, theme, questions, points, onCountScore, onStopGame, onNextQuestion, onCheckAnswer }) => {
   const [myAnswer, setMyAnswer] = useState("");
   // const [correct, setCorrect] = useState();
   const inputAnswer = useRef(null);
@@ -36,40 +36,24 @@ const Question = ({ start, difficulty, theme, questions, points, onCountScore, o
     }
   };
 
-  const startGame = () => {
-    onCountScore(-1)
-    onStartGame(true)
-  }
+  // const startGame = () => {
+  //   onCountScore(-1)
+  //   setMyAnswer('')
+  //   onStartGame(true)
+  // }
 
   const stopGame  = () => {
+    setMyAnswer('')
     onStopGame(false)
   }
 
   const skipQuestion = () => {
+    setMyAnswer('')
     onNextQuestion(true)
   }
 
   return (
     <>
-      <div className={"card text-white bg-dark mt-2 " + (!start ? "" : "nonactive")}>
-        <div className="card-header">
-          <span className="title">
-            Question Pour Un <span className="champion-text">Champion</span>
-          </span>
-        </div>
-        <div className="card-body">
-            <p className="text-dark">
-              Bienvenue dans question pour un champion.
-            </p>
-        </div>
-        <div className="card-footer">
-          <button className="btn btn-lg btn-primary mt-2" onClick={startGame}>
-            START
-          </button>
-        </div>
-      </div>
-
-
       <div className={"card text-white bg-dark mt-2 " + (start ? "" : "nonactive")}>
         <div className="card-header">          
           <span className="title">

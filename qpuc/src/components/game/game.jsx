@@ -4,6 +4,9 @@ import FourInOne from "./../fourstages/fourstages";
 import Question from "./../question/question";
 import './game.scss'
 import questionsData from './../../assets/questions.json';
+import WinCard from "../win/win";
+import LoseCard from "../lose/lose";
+import StartCard from "../start/start";
 
 const Game = () => {
   const [startQuestions, setStartQuestions] = useState(false);
@@ -28,6 +31,8 @@ const Game = () => {
   };
 
   const handleStartGame = () => {
+    setDifficulty(1);
+    setScore(-1);
     randomQuestion();
     setStartQuestions(true);
   };
@@ -43,11 +48,14 @@ const Game = () => {
     // setAnwser('blanc' + rand)
   }
 
-  const handleCheckAnswer = (correct) => {
+  const handleCheckAnswer = (correct) => {    
     if(correct) {
       setDifficulty(difficulty+1);
     } else {
       setDifficulty(1);
+    }
+    if(difficulty == 4) {
+      setStartQuestions(false)
     }
   }
 
@@ -75,29 +83,32 @@ const Game = () => {
             <FourInOne start={startQuestions} difficulty={difficulty}></FourInOne>
             <div className="right-part">
               <div>
-                {!startQuestions && score === 4 ? 'BRAVO VOUS AVEZ GAGNEZ' : ''}
-                {!startQuestions && score === 3 ? 'TRES BON SCORE' : ''}
-                {!startQuestions && (score < 3 && score > -1) ? 'VOUS FEREZ MIEUX LA FOIS PROCHAINE' : ''}
+                {!startQuestions && score === 3 ? <WinCard onRestartGame={handleStartGame} /> : ''}
+                {!startQuestions && (score < 3 && score > -1) ? <LoseCard onRestartGame={handleStartGame} /> : ''}
               </div>
             <div>{!startQuestions && score >-1 ? 'Current Score: ' + score : ''}</div>
-              <Question
+
+            {!startQuestions && score >-1 ? 'Current Score: ' + score : ''}
+
+
+               {!startQuestions  && score == -1 ?
+                <StartCard onStartGame={handleStartGame}></StartCard> : ''
+
+               }
+              {
+                startQuestions ?  
+                <>
+                  <Question
                     theme = {theme}
                     questions={questions}
                     difficulty = {difficulty}
                     points={score}
                     start={startQuestions}
                     onCountScore={handleScore}
-                    onStartGame={handleStartGame}
                     onStopGame={handleStopGame}                    
                     onNextQuestion={handleNextQuestion}
                     onCheckAnswer={handleCheckAnswer}>
               </Question>
-
-              
-              {
-                startQuestions ?  
-                <>
-    
                   <TimerExample start={startQuestions} onTimeEnd={handleTimeEnd} />
                   </>
 
