@@ -1,13 +1,20 @@
 import { useEffect, useRef, useState } from "react";
 import "./question.scss";
 
-
-const Question = ({ start, difficulty, theme, questions, points, onCountScore, onStopGame, onNextQuestion, onCheckAnswer }) => {
+const Question = ({
+  start,
+  difficulty,
+  theme,
+  questions,
+  points,
+  onCountScore,
+  onStopGame,
+  onNextQuestion,
+  onCheckAnswer,
+}) => {
   const [myAnswer, setMyAnswer] = useState("");
   // const [correct, setCorrect] = useState();
   const inputAnswer = useRef(null);
-  
-
 
   useEffect(() => {
     inputAnswer.current.focus();
@@ -18,15 +25,18 @@ const Question = ({ start, difficulty, theme, questions, points, onCountScore, o
   };
 
   const checkAnswer = () => {
-    if (myAnswer.toLowerCase() == questions[difficulty-1].correct_answer.toLowerCase()) {
+    if (
+      myAnswer.toLowerCase() ==
+      questions[difficulty - 1].correct_answer.toLowerCase()
+    ) {
       onCountScore(points + 1);
       //setCorrect(true);
       onCheckAnswer(true);
-      onNextQuestion(true)
+      onNextQuestion(true);
     } else {
       //setCorrect(false);
       onCheckAnswer(false);
-      onNextQuestion(true)
+      onNextQuestion(true);
     }
   };
 
@@ -42,29 +52,29 @@ const Question = ({ start, difficulty, theme, questions, points, onCountScore, o
   //   onStartGame(true)
   // }
 
-  const stopGame  = () => {
-    setMyAnswer('')
-    onStopGame(false)
-  }
+  const stopGame = () => {
+    setMyAnswer("");
+    onStopGame(false);
+  };
 
   const skipQuestion = () => {
-    setMyAnswer('')
-    onNextQuestion(true)
-  }
+    setMyAnswer("");
+    onNextQuestion(true);
+  };
 
   return (
     <>
-      <div className={"card text-white bg-dark mt-2 " + (start ? "" : "nonactive")}>
-        <div className="card-header">          
+      <div
+        className={"card text-white bg-dark mt-2 " + (start ? "" : "nonactive")}
+      >
+        <div className="card-header">
           <span className="title">
-              Question Pour Un <span className="champion-text">Champion</span>
-            </span>
+            Question Pour Un <span className="champion-text">Champion</span>
+          </span>
         </div>
         <div className="card-body">
-          { theme }
-          <h5>{questions[difficulty-1]?.question}</h5>
-          {questions[difficulty-1]?.correct_answer}
-          {difficulty}
+          <span className="theme">{theme}</span>
+          <h5>{questions[difficulty - 1]?.question}</h5>
           <form>
             <div className="input-group mb-3">
               <input
@@ -73,31 +83,35 @@ const Question = ({ start, difficulty, theme, questions, points, onCountScore, o
                 type="text"
                 value={myAnswer}
                 onChange={handleMyAnswer}
-                placeholder="Your answer"
+                placeholder="Votre réponse"
                 onKeyDown={handleKeyDown}
               ></input>
               <button
-                className="btn btn-primary"
+                className="btn btn-lg btn-success d-flex justify-content-center align-items-center"
                 type="button"
                 id="button-addon2"
                 onClick={checkAnswer}
               >
-                OK <i className="bi bi-check"></i>
+                <i className="bi bi-check fs-3"></i> OK
               </button>
             </div>
           </form>
-
         </div>
-        <div className="card-footer">
-        <button className="btn btn-danger" onClick={skipQuestion}>
-            Passe
+        <div className="card-footer d-flex">
+          <button
+            className="btn btn-lg btn-secondary mt-2 d-flex justify-content-center align-items-center"
+            onClick={skipQuestion}
+          >
+            <i class="bi bi-skip-forward fs-2"></i><span className="ms-2"> PASSE</span>
           </button>
-        <button className="btn btn-primary" onClick={stopGame}>
-            STOP GAME
+          <button
+            className="btn btn-lg btn-danger mt-2 d-flex justify-content-center align-items-center ms-auto"
+            onClick={stopGame}
+          >
+            <i class="bi bi-stop fs-2"></i> <span className="ms-2"> STOP</span>
           </button>
         </div>
       </div>
-
     </>
   );
 };
