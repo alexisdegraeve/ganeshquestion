@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Stage from '../stage/stage';
 
 const TimerExample = ({ start, onTimeEnd }) => {
-  const [timeLeft, setTimeLeft] = useState(40);
+  const [timeLeft, setTimeLeft] = useState(60);
   const timerRef = useRef(null); // Stocke la référence du timer
 
   useEffect(() => {
@@ -11,7 +11,7 @@ const TimerExample = ({ start, onTimeEnd }) => {
     if (!start) {
       clearInterval(timerRef.current); // Stoppe le timer si `start` est false
       timerRef.current = null;
-      setTimeLeft(40); // Reset le temps
+      setTimeLeft(60); // Reset le temps
       return;
     }
 
